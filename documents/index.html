@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>cocoa 0.0.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootswatch-cerulean.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" href="_static/css/adjust_theme/bootswatch-cerulean.css" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '0.0.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="None" href="#" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">cocoa 0.0.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoa">cocoa module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaChart">cocoaChart module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaConfig">cocoaConfig module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaExcel">cocoaExcel module</a></li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoa">cocoa module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaChart">cocoaChart module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaConfig">cocoaConfig module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaExcel">cocoaExcel module</a></li>
+</ul>
+
+  </div>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <section id="welcome-to-cocoa-s-documentation">
+<h1>Welcome to cocoa’s documentation!<a class="headerlink" href="#welcome-to-cocoa-s-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-cocoa"></span><section id="module-cocoa">
+<span id="cocoa-module"></span><h2>cocoa module<a class="headerlink" href="#module-cocoa" title="Permalink to this heading">¶</a></h2>
+<p>Cocoa Log Checker</p>
+<dl class="simple">
+<dt>Input:</dt><dd><p>exposure_data.json</p>
+</dd>
+<dt>Process:</dt><dd><p>集計</p>
+<ul class="simple">
+<li><p>COCOAスコア/日</p></li>
+<li><p>接触距離ごとの接触時間/日</p></li>
+<li><p>接触回数/日</p></li>
+</ul>
+</dd>
+<dt>Output:</dt><dd><ul class="simple">
+<li><p>Excel 接触履歴　グラフ</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.build_dfs">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">build_dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.build_dfs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build DataFrame from exposure_data.json save to Excel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>exposure</strong> (<em>list/dict</em>) – exposure_data.jsonを辞書形式で読み込んだもの</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>merge_df, daily_summary_df</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>df</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.calc_score_sum">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">calc_score_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.calc_score_sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>集計関数 aggfunc</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.cocoa_score_sum">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">cocoa_score_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.cocoa_score_sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>集計関数 aggfunc</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.exposure_minutes">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">exposure_minutes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.exposure_minutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>集計関数 aggfunc
+秒を分にして集計</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.get_instance_score">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">get_instance_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">si</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.get_instance_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>ばく露距離に基づくスコア計算</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>si</strong> (<em>scanInstances</em>) – スキャンインスタンス</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>db ばく露中の平均デシベル値
+int: duration ばく露時間 (秒)
+str: str_dist 距離文字列表記
+float: score ばく露距離考慮のduration値 COCOAスコアに近似
+float: mindb_score: 最強の強度でばく露したと仮定したスコア</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.main">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cocoa Log Checker Main</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logger</strong> (<em>logging</em>) – ロガー</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-cocoaChart"></span><section id="module-cocoaChart">
+<span id="cocoachart-module"></span><h2>cocoaChart module<a class="headerlink" href="#module-cocoaChart" title="Permalink to this heading">¶</a></h2>
+<p>Cocoa Chart Builder</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaChart.draw_cocoa_charts">
+<span class="sig-prename descclassname"><span class="pre">cocoaChart.</span></span><span class="sig-name descname"><span class="pre">draw_cocoa_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaChart.draw_cocoa_charts" title="Permalink to this definition">¶</a></dt>
+<dd><p>draw chats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>df</strong> (<em>DataFrame</em>) – グラフを書くDataの入ったDataFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaChart.setup_bar_chart">
+<span class="sig-prename descclassname"><span class="pre">cocoaChart.</span></span><span class="sig-name descname"><span class="pre">setup_bar_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'チャートタイトル'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#95949a'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#95949a'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaChart.setup_bar_chart" title="Permalink to this definition">¶</a></dt>
+<dd><p>draw chats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>axes</strong> (<em>AxesSubplot</em>) – プロットエリア</p></li>
+<li><p><strong>x_data</strong> (<em>list</em>) – x軸データ</p></li>
+<li><p><strong>y_data</strong> (<em>list</em>) – y軸データ</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – チャートタイトル</p></li>
+<li><p><strong>y_label</strong> (<em>str</em>) – y軸ラベル</p></li>
+<li><p><strong>bar_color</strong> (<em>matplotlib color str</em>) – 棒グラフの色</p></li>
+<li><p><strong>title_color</strong> (<em>matplotlib color str</em>) – タイトル文字の色</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Retuens:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-cocoaConfig"></span><section id="module-cocoaConfig">
+<span id="cocoaconfig-module"></span><h2>cocoaConfig module<a class="headerlink" href="#module-cocoaConfig" title="Permalink to this heading">¶</a></h2>
+<p>Cocoa Log Checker Config</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaConfig.create_logger">
+<span class="sig-prename descclassname"><span class="pre">cocoaConfig.</span></span><span class="sig-name descname"><span class="pre">create_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocoaConfig.create_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>ロギングオブジェクトを作成して返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>logger</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(logger)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaConfig.parse_args">
+<span class="sig-prename descclassname"><span class="pre">cocoaConfig.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaConfig.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>“parse command line arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> (<em>argparse</em>) – コマンドライン引数パーサー</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Retuens:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaConfig.setup_args">
+<span class="sig-prename descclassname"><span class="pre">cocoaConfig.</span></span><span class="sig-name descname"><span class="pre">setup_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocoaConfig.setup_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>“コマンドライン引数設定</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>parser</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(argparse)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span id="document-cocoaExcel"></span><section id="module-cocoaExcel">
+<span id="cocoaexcel-module"></span><h2>cocoaExcel module<a class="headerlink" href="#module-cocoaExcel" title="Permalink to this heading">¶</a></h2>
+<p>Excel関連モジュール</p>
+<ul class="simple">
+<li><p>シートの整形</p></li>
+<li><p>グラフ追加</p></li>
+<li><p>DataFrame形式をExcelにする</p></li>
+<li><p>Excel Bookを保管する</p></li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.add_chart">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">add_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctitle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'日付'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.add_chart" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>COCOA各種グラフの追加</dt><dd><p>要素(element)１つの棒グラフ</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>wb</strong> (<em>Workbook</em>) – Workbookオブジェクト</p></li>
+<li><p><strong>element</strong> (<em>str</em>) – グラフ要素のカラム名</p></li>
+<li><p><strong>row</strong> (<em>int</em>) – 要素名のある行 default 3,</p></li>
+<li><p><strong>ctitle</strong> (<em>str</em>) – チャートタイトル</p></li>
+<li><p><strong>x_title</strong> (<em>str</em>) – X軸タイトル defult:’日付’</p></li>
+<li><p><strong>y_title</strong> (<em>str</em>) – Y軸タイトル</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Workbookオブジェクト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Workbook)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.add_comment_direct">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">add_comment_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheetname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.add_comment_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Excelのワークブック、シート名、座標と追加するコメントを受けて、その位置にコメントを追加する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>wb</strong> (<em>Workbook</em>) – Excel workbookオブジェクト</p></li>
+<li><p><strong>sheetname</strong> (<em>str</em>) – ワークシート名</p></li>
+<li><p><strong>coordinate</strong> (<em>str</em>) – ワークシート上の座標　ex: ‘A1’</p></li>
+<li><p><strong>comment</strong> (<em>str</em>) – 追加するコメントストリング</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Workbookオブジェクト 保管されていない</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Workbook)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.add_title_comment">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">add_title_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheetname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titlerow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titlename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.add_title_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>ワークブックのシート名タイトル行、カラム名とそこに追加するコメント文字列を渡してセルにコメントを付ける</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>wb</strong> (<em>Workbook</em>) – Excel workbookオブジェクト</p></li>
+<li><p><strong>sheetname</strong> (<em>str</em>) – ワークシート名</p></li>
+<li><p><strong>titlerow</strong> (<em>int</em>) – タイトルの行番号</p></li>
+<li><p><strong>titlename</strong> (<em>str</em>) – タイトルカラムの名前</p></li>
+<li><p><strong>comment</strong> (<em>str</em>) – 追加するコメントストリング</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Workbookオブジェクト 保管されていない</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Workbook)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.create_cocoa_excel">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">create_cocoa_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.create_cocoa_excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>create cocoa log Excel book</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>merge_df</strong> (<em>DataFrame</em>) – マージ後のDataFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.fill_cell_color">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">fill_cell_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.fill_cell_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>セル色設定</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cell_range</strong> (<em>Range</em>) – ワークシート行レンジオブジェクト ws[A1:A4]</p></li>
+<li><p><strong>color</strong> (<em>str</em>) – 色</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.ftitle">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">ftitle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">titles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.ftitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>stitleでスキャンしたtitlesのカラム名からカラム属性を返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>titles</strong> (<em>list</em>) – stitleでスキャンしたカラムのリスト</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – カラム名</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>以下の例にあるカラム属性</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(dict)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>[{‘name’: カラム名, ‘letter’: ‘A’,’column’: 1, ‘coordinate’: ‘A1’},{},{}]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.save_book">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">save_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.save_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Excel ワークブックを保管する</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>大きなBookの保管は時間がかかるので、この関数の呼び出しを最小限にすることでパフォーマンス向上が期待できる</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>wb</strong> (<em>Workbook</em>) – openpyxlのワークブックオブジェクト</p></li>
+<li><p><strong>bookname</strong> (<em>str</em>) – Excelファイル名</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.save_to_excel_multi">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">save_to_excel_multi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.save_to_excel_multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>複数のデータフレームをExcelに抽出する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>bookname</strong> (<em>str</em>) – Excelファイル名</p></li>
+<li><p><strong>dfs</strong> (<em>list of dataframe</em>) – 抽出するデータフレームのリスト</p></li>
+<li><p><strong>sheets</strong> (<em>list of str</em>) – 抽出先のシート名のリスト</p></li>
+<li><p><strong>indexes</strong> (<em>list of boolian</em>) – indexを含めて抽出するかどうかをデータフレーム毎にリストで</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Workbook object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Workbook)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.shape_a_sheets">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">shape_a_sheets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.shape_a_sheets" title="Permalink to this definition">¶</a></dt>
+<dd><p>シート整形のメイン</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>wb</strong> (<em>Workbook</em>) – Workbookオブジェクト</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Workbookオブジェクト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Workbook)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.shape_exposure_sheet">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">shape_exposure_sheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ws</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.shape_exposure_sheet" title="Permalink to this definition">¶</a></dt>
+<dd><p>接触履歴ワークシート整形関数</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>ws</strong> (<em>Wroksheet</em>) – ワークシートオブジェクト</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.shape_sheet_common">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">shape_sheet_common</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ws</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.shape_sheet_common" title="Permalink to this definition">¶</a></dt>
+<dd><p>ワークシート共通で使用する整形関数</p>
+<ul class="simple">
+<li><p>Font設定</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logger</em>) – ロギングオブジェクト</p></li>
+<li><p><strong>ws</strong> (<em>Wroksheet</em>) – ワークシートオブジェクト</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaExcel.stitle">
+<span class="sig-prename descclassname"><span class="pre">cocoaExcel.</span></span><span class="sig-name descname"><span class="pre">stitle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ws</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaExcel.stitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>指定された行をタイトル行として、カラム名と各種属性をリスト形式で返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ws</strong> (<em>Worksheet</em>) – openpyxl ワークシートオブジェクト</p></li>
+<li><p><strong>position</strong> (<em>int</em>) – タイトル行の位置　行番号</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>以下例にあるdictのリスト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>[{‘name’: カラム名, ‘letter’: ‘A’,’column’: 1, ‘coordinate’: ‘A1’},{},{}]</p>
+</dd></dl>
+
+</section>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="#">cocoa 0.0.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2022, hy.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 5.1.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>
