@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 """Cocoa Log Checker Config
 """
+from datetime import timezone as dttz
+from datetime import date, datetime, timedelta
+import platform
+import os
+import logging
+from ast import Store
+import argparse
 __author__ = "hyuasa"
 __version__ = "0.0.1"
-__date__    = "Aug 16 2022"
+__date__ = "Aug 16 2022"
 
-import argparse
-from ast import Store
-import logging
-import os
-import platform
-from datetime import date, datetime, timedelta
-from datetime import timezone as dttz
 
 global COCOA_LOG, DRAW_GRAPH
 DEBUGFILE = os.getenv('DEBUGFILE', default='cocoa_log.txt')
@@ -41,28 +41,28 @@ def setup_args():
 
     Args:
         None
-    
+
     Returns:
         (argparse): parser
 
     """
     parser = argparse.ArgumentParser(description='Cocoa Log Checker')
-    parser.add_argument('-l', '--cocoa_log', metavar = 'COCOA_LOGFILE', required = False,
-                        help = 'cocoa log file name')
-    parser.add_argument('--graph', required = False, action = 'store_true', default = False,
-                        help = 'show matplotlib Graph')
+    parser.add_argument('-l', '--cocoa_log', metavar='COCOA_LOGFILE', required=False,
+                        help='cocoa log file name')
+    parser.add_argument('--graph', required=False, action='store_true', default=False,
+                        help='show matplotlib Graph')
     return parser
 
 
 def parse_args(parser):
     """"parse command line arguments
-    
+
     Args:
         parser (argparse): コマンドライン引数パーサー
 
     Retuens:
         None
-    
+
     """
     global COCOA_LOG, DRAW_GRAPH
     args = parser.parse_args()
