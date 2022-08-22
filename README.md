@@ -81,9 +81,13 @@ options:
                         cocoa log file name
               
 ```
+Windowsでは、`cocoa.pyw`をダブルクリックで実行
+
 ### 実行例
 
-同じフォルダにexposure_data.jsonがある場合は、`--cocoa_log xxxx.json`は省略できます。
+`-l` は指定せず、GUI環境でファイルの選択も可能です。  
+同じフォルダにexposure_data.jsonがある場合は、`--cocoa_log xxxx.json`は省略できます。  
+
 ```text
 python cocoa.py --cocoa_log /Users/mbam2/Downloads/exposure_data.json
 ```
