@@ -224,7 +224,7 @@ def handle_events(logger, window, merge_df):
             # pprint(value)
             continue
 
-        if event == '-BUTTON_FILE-' or value['-MENU-'] == 'ファイルを開く':
+        if event == '-BUTTON_FILE-' or value['-MENU-'] == 'COCOAログファイルを開く':
             select_cocoa_log_filename(logger, window)
             refresh_window(logger, window)
 
