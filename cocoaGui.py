@@ -154,7 +154,7 @@ def create_window(logger, headings, data, status_message):
         (Window) : PySimpleGUI Window インスタンス
 
     """
-    sg.theme("DarkBlue3")
+    sg.theme(cc.SG_THEME)
     sg.set_options(font=(cc.FONT_FAMILY, 10)) 
     layout = [
         [sg.MenuBar([['ファイル', ['COCOAログファイルを開く', '閉じる']]], key='-MENU-')],
@@ -171,8 +171,8 @@ def create_window(logger, headings, data, status_message):
          auto_size_columns=False,
          justification='right',
          key='-TABLE-',
-         alternating_row_color='#595857',
-         header_text_color='#274a78',
+         alternating_row_color=cc.SG_ALT_ROW_COLOR,
+         header_text_color=cc.SG_HEADER_TEXT_COLOR,
          num_rows=min(25, len(data)),
          col_widths=list(map(lambda x:len(x)+5, headings)))
          ],

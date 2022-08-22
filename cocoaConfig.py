@@ -21,6 +21,9 @@ COCOA_LOG_INFORMATION = []
 NEED_VALID_COCOA_LOG = False
 COCOA_SCORE_THRESHOLD = 1350
 COCOA_EXPOSURE_SHEET_NAME = '接触履歴'
+SG_THEME = 'LightBlue2'
+SG_ALT_ROW_COLOR = '#eaf4fc'
+SG_HEADER_TEXT_COLOR = '#19448e'
 
 TZ = 'Asia/Tokyo'
 JST = dttz(timedelta(hours=+9), 'JST')
