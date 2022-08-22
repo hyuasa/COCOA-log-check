@@ -33,7 +33,7 @@ iPhone, Android
 
 ### GUI
 
-<img width="1300" alt="GUI" src="https://user-images.githubusercontent.com/19845464/185816885-b3b6426a-f272-41d2-a346-926b18113025.png">
+<img width="1309" alt="GUI2" src="https://user-images.githubusercontent.com/19845464/185840797-6c07310a-c830-4528-b9ff-627df53621d2.png">
 
 ### 接触履歴(Excel Table)  
 
