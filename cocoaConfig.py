@@ -14,12 +14,13 @@ __version__ = "0.0.1"
 __date__ = "Aug 16 2022"
 
 
-global COCOA_LOG, DRAW_GRAPH
+global COCOA_LOG
 DEBUGFILE = os.getenv('DEBUGFILE', default='cocoa_log.txt')
 COCOA_LOG = os.getenv('COCOA_LOG', default='exposure_data.json')
+COCOA_LOG_INFORMATION = []
+NEED_VALID_COCOA_LOG = False
 COCOA_SCORE_THRESHOLD = 1350
 COCOA_EXPOSURE_SHEET_NAME = '接触履歴'
-DRAW_GRAPH = False
 
 TZ = 'Asia/Tokyo'
 JST = dttz(timedelta(hours=+9), 'JST')
@@ -49,8 +50,6 @@ def setup_args():
     parser = argparse.ArgumentParser(description='Cocoa Log Checker')
     parser.add_argument('-l', '--cocoa_log', metavar='COCOA_LOGFILE', required=False,
                         help='cocoa log file name')
-    parser.add_argument('--graph', required=False, action='store_true', default=False,
-                        help='show matplotlib Graph')
     return parser
 
 
@@ -68,8 +67,6 @@ def parse_args(parser):
     args = parser.parse_args()
     if args.cocoa_log:
         COCOA_LOG = args.cocoa_log
-    if args.graph:
-        DRAW_GRAPH = True
     return
 
 

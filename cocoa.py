@@ -13,23 +13,26 @@
         - 接触回数/日
 
     Output:
+       - GUI window
        - Excel 接触履歴　グラフ
-       - matplotlib
+       - matplotlib グラフ
 
 """
-import cocoaChart as ccht
-import cocoaExcel as cex
-import cocoaConfig as cc
-import pandas as pd
-from openpyxl.comments import Comment
-import numpy as np
-from matplotlib import pylab as plt
-import matplotlib
-from pprint import pformat, pprint
-from datetime import date, datetime, timedelta
-import traceback
-import sys  # process関係
 import json
+import sys  # process関係
+import traceback
+from datetime import date, datetime, timedelta
+from pprint import pformat, pprint
+
+import matplotlib
+import numpy as np
+import pandas as pd
+from matplotlib import pylab as plt
+from openpyxl.comments import Comment
+
+import cocoaConfig as cc
+import cocoaGui as cg
+
 __author__ = "hyuasa"
 __version__ = "0.0.1"
 __date__ = "Aug 16 2022"
@@ -105,8 +108,57 @@ def get_instance_score(logger, si=None):
     return db, duration, str_dist, score, mindb_score
 
 
+def verify_and_build_dataframe(logger, exposure):
+    """Verify COCOA log and build dataframe
+
+    Args:
+        logger (logging): ロガー
+        exposure (list/dict): exposure_data.jsonを辞書形式で読み込んだもの
+
+    Returns:
+        DataFrame : valid cocoa log dataframe
+
+    """
+    # verify cocoa log
+    result = False
+    log_information = []
+    try:
+        log_information.append(f"# of exprosure_windows: {len(exposure['exposure_windows'])}")
+        log_information.append(f"# of daily_summariese: {len(exposure['daily_summaries'])}")
+        log_information.append(f"app_version: {exposure['app_version']}")
+        log_information.append(f"platform: {exposure['platform']}")
+        log_information.append(f"platform_version: {exposure['platform_version']}")
+        log_information.append(f"model: {exposure['model']}")
+        log_information.append(f"device_type: {exposure['device_type']}")
+        log_information.append(f"build_number: {exposure['build_number']}")
+        log_information.append(f"en_version: {exposure['en_version']}")
+        result = True
+    except KeyError as ke:
+        log_information.append(f'正しいcocoa_logファイルではありません。{cc.COCOA_LOG}')
+
+    cc.COCOA_LOG_INFORMATION = log_information
+
+    # build dataframe
+    merge_df = None
+    if result:
+        # valid ccoa log then build cocoa Dataframs
+        merge_df = build_dfs(logger, exposure)
+        if len(merge_df) > 0:
+            # valid dataframe of cocoa log
+            cc.NEED_VALID_COCOA_LOG = False
+        else:
+            # but empty cocoa log
+            merge_df = None
+            cc.NEED_VALID_COCOA_LOG = True
+    else:
+        # not valid cocoa log
+        cc.NEED_VALID_COCOA_LOG = True
+
+    return merge_df
+
+
 def build_dfs(logger, exposure):
-    """Build DataFrame from exposure_data.json save to Excel
+    """Build DataFrame from exposure_data.json
 
     Args:
         logger (logging): ロガー
@@ -150,9 +202,8 @@ def build_dfs(logger, exposure):
     daily_summary_df = pd.DataFrame(daily_summary)
     exposures_df = pd.DataFrame(exposures)
     events_df = pd.DataFrame(events)
-    # print(daily_summary_df)
-    # print(exposures_df)
-    # まとめて集計(合計名が重なるので使用せず)
+
+    # ex_pv not used so far
     ex_pv = pd.pivot_table(exposures_df, index=['date', 'dow'],
                            columns=['distance'],
                            values=['score', 'duration'],
@@ -164,8 +215,6 @@ def build_dfs(logger, exposure):
     ex_pv.applymap('{:,.0f}'.format)
     ex_pv = ex_pv.drop(labels=('sum', 'duration'), axis=1)
     ex_pv = ex_pv.drop(labels=('exposure_minutes', 'score'), axis=1)
-    #ex_pv = ex_pv.rename(columns={'sum': '累積', 'count':'件数'})
-    #ex_pv = ex_pv.rename(columns={'duration':'ばく露時間(秒)', 'score':'算出スコア'})
 
     # exposure duration(min)
     duration_pv = pd.pivot_table(exposures_df, index=['date', 'dow'],
@@ -203,6 +252,46 @@ def build_dfs(logger, exposure):
     return merge_df
 
 
+def read_cocoa_log(logger):
+    """Read Cocoa Log(json) to dict
+
+    Args:
+        logger (logging): ロガー
+
+    Returns:
+        dict : exposure
+
+    """
+    exposure = {}
+    try:
+        # logger.info(f'cocoa_log: {cc.COCOA_LOG}')
+        with open(cc.COCOA_LOG, 'r') as exposure_data:
+            exposure = json.load(exposure_data)
+    except FileNotFoundError as e:
+        logger.info(f"ファイルが見つかりません。 {cc.COCOA_LOG}")
+        cc.NEED_VALID_COCOA_LOG = True
+    except Exception as e:
+        stack_trace = traceback.format_exc()
+        logger.info(f"Catch Exception: {e}\nSTACK_TRACE:\n{stack_trace}")
+        cc.NEED_VALID_COCOA_LOG = True    
+    return exposure
+    
+
+def update_dataframe(logger):
+    """update Dataframe with current json file
+
+    Args:
+        logger (logging): ロガー
+
+    Returns:
+        DataFrame : valid cocoa log dataframe
+
+    """
+    exposure = read_cocoa_log(logger)
+    merge_df = verify_and_build_dataframe(logger, exposure)
+    return merge_df
+
+
 def main(logger):
     """Cocoa Log Checker Main
 
@@ -213,44 +302,9 @@ def main(logger):
         None
 
     """
-    logger.info(f"cocoa_log: {cc.COCOA_LOG}")
-    # COCOAログ Read
-    try:
-        with open(cc.COCOA_LOG, 'r') as exposure_data:
-            exposure = json.load(exposure_data)
-    except FileNotFoundError as e:
-        logger.info(f"ファイルが見つかりません。 {cc.COCOA_LOG}")
-        sys.exit()
-    except Exception as e:
-        stack_trace = traceback.format_exc()
-        logger.info(f"Catch Exception: {e}\nSTACK_TRACE:\n{stack_trace}")
-        sys.exit()
-
-    # COCOAログ Verify
-    try:
-        logger.info(
-            f"# of exprosure_windows: {len(exposure['exposure_windows'])}")
-        logger.info(
-            f"# of daily_summariese: {len(exposure['daily_summaries'])}")
-        logger.info(f"app_version: {exposure['app_version']}")
-        logger.info(f"platform: {exposure['platform']}")
-        logger.info(f"platform_version: {exposure['platform_version']}")
-        logger.info(f"model: {exposure['model']}")
-        logger.info(f"device_type: {exposure['device_type']}")
-        logger.info(f"build_number: {exposure['build_number']}")
-        logger.info(f"en_version: {exposure['en_version']}")
-    except KeyError as ke:
-        logger.info(f'正しいcocoa_logファイルではありません。{cc.COCOA_LOG}')
-        sys.exit()
-
-    # Build cocoa Dataframs
-    merge_df = build_dfs(logger, exposure)
-
-    # Output
-    if cc.DRAW_GRAPH:
-        ccht.draw_cocoa_charts(logger, merge_df)
-    else:
-        cex.create_cocoa_excel(logger, merge_df)
+    merge_df = update_dataframe(logger)
+    cg.main(logger, merge_df)  # open gui
+    return
 
 
 if __name__ == '__main__':

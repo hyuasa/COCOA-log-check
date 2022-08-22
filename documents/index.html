@@ -78,6 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaChart">cocoaChart module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaConfig">cocoaConfig module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaExcel">cocoaExcel module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaGui">cocoaGui module</a></li>
 </ul>
 
                 </ul>
@@ -124,6 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaChart">cocoaChart module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaConfig">cocoaConfig module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaExcel">cocoaExcel module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-cocoaGui">cocoaGui module</a></li>
 </ul>
 
   </div>
@@ -170,15 +172,16 @@
 </ul>
 </dd>
 <dt>Output:</dt><dd><ul class="simple">
+<li><p>GUI window</p></li>
 <li><p>Excel 接触履歴　グラフ</p></li>
-<li><p>matplotlib</p></li>
+<li><p>matplotlib グラフ</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="cocoa.build_dfs">
 <span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">build_dfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.build_dfs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build DataFrame from exposure_data.json save to Excel</p>
+<dd><p>Build DataFrame from exposure_data.json</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -248,6 +251,60 @@ float: mindb_score: 最強の強度でばく露したと仮定したスコア</p
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.read_cocoa_log">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">read_cocoa_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.read_cocoa_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read Cocoa Log(json) to dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logger</strong> (<em>logging</em>) – ロガー</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>exposure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.update_dataframe">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">update_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.update_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>update Dataframe with current json file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logger</strong> (<em>logging</em>) – ロガー</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>valid cocoa log dataframe</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoa.verify_and_build_dataframe">
+<span class="sig-prename descclassname"><span class="pre">cocoa.</span></span><span class="sig-name descname"><span class="pre">verify_and_build_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoa.verify_and_build_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify COCOA log and build dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>exposure</strong> (<em>list/dict</em>) – exposure_data.jsonを辞書形式で読み込んだもの</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>valid cocoa log dataframe</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -613,6 +670,128 @@ float: mindb_score: 最強の強度でばく露したと仮定したスコア</p
 </dl>
 <p class="rubric">Example</p>
 <p>[{‘name’: カラム名, ‘letter’: ‘A’,’column’: 1, ‘coordinate’: ‘A1’},{},{}]</p>
+</dd></dl>
+
+</section>
+<span id="document-cocoaGui"></span><section id="module-cocoaGui">
+<span id="cocoagui-module"></span><h2>cocoaGui module<a class="headerlink" href="#module-cocoaGui" title="Permalink to this heading">¶</a></h2>
+<p>Cocoa Log Checker GUI</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.build_table_data">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">build_table_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.build_table_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>build table data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>merge_df</strong> (<em>DataFrame</em>) – pandas data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>table headings
+(list) : table values</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.create_window">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">create_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.create_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>create new window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>headings</strong> (<em>list</em>) – tableカラムタイトル</p></li>
+<li><p><strong>data</strong> (<em>list</em>) – tableデータ</p></li>
+<li><p><strong>status_message</strong> (<em>str</em>) – ステータスメッセージ</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PySimpleGUI Window インスタンス</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Window)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.handle_events">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">handle_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.handle_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handling GUI events</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>window</strong> (<em>Window</em>) – PySimpleGUI Window インスタンス</p></li>
+<li><p><strong>merge_df</strong> (<em>DataFrame</em>) – COCOAログDataFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.main">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>GUI main</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>merge_df</strong> (<em>DataFrame</em>) – pandas data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.refresh_window">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">refresh_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.refresh_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>refresh Table</p>
+<blockquote>
+<div><p>read data,
+if valid, close old window, if not valid, say so.
+create new window.
+because, PySimpleGUI table header can not update via table.update()</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>window</strong> (<em>Window</em>) – GUI window instance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cocoaGui.select_cocoa_log_filename">
+<span class="sig-prename descclassname"><span class="pre">cocoaGui.</span></span><span class="sig-name descname"><span class="pre">select_cocoa_log_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocoaGui.select_cocoa_log_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select cocoa log via file dialog</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger</strong> (<em>logging</em>) – ロガー</p></li>
+<li><p><strong>window</strong> (<em>Window</em>) – GUI window instance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

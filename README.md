@@ -31,6 +31,10 @@ iPhone, Android
 
 ## Output
 
+### GUI
+
+<img width="1300" alt="GUI" src="https://user-images.githubusercontent.com/19845464/185816885-b3b6426a-f272-41d2-a346-926b18113025.png">
+
 ### 接触履歴(Excel Table)  
 
 <img width="751" alt="excel table" src="https://user-images.githubusercontent.com/19845464/185004074-f2d90444-b5b4-488d-89d7-83e4ad070158.png">
@@ -40,11 +44,8 @@ iPhone, Android
 <img width="510" alt="execl charts" src="https://user-images.githubusercontent.com/19845464/185004084-45af3735-54d2-47c2-9ec8-6cf37c4175f8.png">
 
 ### COCOA Charts(Matplotlib)
-```text
-python cocoa.py --graph 
-``` 
-<img width="957" alt="cocoa chart" src="https://user-images.githubusercontent.com/19845464/185004089-c5808971-a3bd-4907-871e-f92d598ce891.png">
 
+<img width="957" alt="cocoa chart" src="https://user-images.githubusercontent.com/19845464/185004089-c5808971-a3bd-4907-871e-f92d598ce891.png">
 
 
 ## 準備
@@ -55,6 +56,7 @@ cocoa.py
 cocoaChart.py
 cocoaConfig.py
 cocoaExcel.py
+cocoaGui.py
 * requirements.txt
 ```
 
@@ -77,7 +79,6 @@ options:
   -h, --help            show this help message and exit
   -l COCOA_LOGFILE, --cocoa_log COCOA_LOGFILE
                         cocoa log file name
-  --graph               just show COCOA charts. Excel will not be created.
               
 ```
 ### 実行例

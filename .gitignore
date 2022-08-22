@@ -3,5 +3,7 @@ __pycache__
 cocoa_log.txt
 *.json
 *.xlsx
+*.back
 command.py
 docs
+venv
