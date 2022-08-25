@@ -96,16 +96,19 @@ def build_table_data(logger, merge_df):
         (list) : table values
 
     """
-    headings = ['     日付', '曜日',
-                ' ~1m', '1m~2m', '1m~3m', '2m~  ', '接触時間合計',
-                '接触回数', 'COCAスコア',
-                ' ~1m', '1m~2m', '1m~3m', '2m~  ', 'score合計',
-                ]
-
     pd.options.display.float_format = '{:,.1f}'.format
     values = merge_df.values.tolist()
     indexes = merge_df.index.tolist()
-
+    headings = []
+    cols = merge_df.columns.tolist()
+    for col in cols:
+        if col[2] == 'contact':
+            headings.append('接触回数')
+        elif col[2] == 'cocoa_score':
+            headings.append('COCOAスコア')
+        else:
+            headings.append(col[2])
+    # pprint(headings)        
     # pprint(values)
 
     days = []
@@ -114,15 +117,6 @@ def build_table_data(logger, merge_df):
     for index in indexes:
         days.append(index[0])
         dows.append(index[1])
-
-    if len(values) > 0:
-        if len(values[0]) == 10:
-            headings.remove(' ~1m')
-            headings.remove(' ~1m')
-        elif len(values[0]) == 12:
-            pass
-        else:
-            pass
 
     i = 0
     data = []
