@@ -24,7 +24,7 @@ import cocoaExcel as cex
 
 __author__ = "hyuasa"
 __version__ = "0.0.2"
-__date__ = "Aug 25 2022"
+__date__ = "Aug 24 2022"
 
 
 def select_cocoa_log_filename(logger, window):
