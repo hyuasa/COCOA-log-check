@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 コマンド形式
 ```text
-usage: cocoa.py [-h] [-l COCOA_LOGFILE] [--graph]
+usage: cocoa.py [-h] [-l COCOA_LOGFILE]
 
 Cocoa Log Checker
 
